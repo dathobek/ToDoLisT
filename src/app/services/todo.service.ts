@@ -26,4 +26,8 @@ export class TodoService {
    public getTodos(): Todo[]{
      return this.todos;
    }
+
+   public removeTodo(id: number): void{
+     this.todos = this.todos.filter((todo) => todo.id != id);
+   }
 }
