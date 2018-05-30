@@ -7,6 +7,23 @@ export class TodoService {
    private todos: Todo [];
    private nextId: number;
 
-  constructor() { }
+  constructor() {
+    this.todos =[
+      new Todo(0, "Make Dinner Tonight"),
+      new Todo(1, "Watch some 9ja Movies "),
+      new Todo(2, "Play Some Chess Games")
+    ];
+      this.nextId = 3;
+   }
+ 
+   public addTodo(text: string) : void{
+     console.log(this.todos);
+     let todo = new Todo(this.nextId, text);
+     this.todos.push(todo);
+     this.nextId++;
+   }
 
+   public getTodos(): Todo[]{
+     return this.todos;
+   }
 }
