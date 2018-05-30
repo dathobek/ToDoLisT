@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-input.component.css']
 })
 export class TodoInputComponent implements OnInit {
-   public todoText: String
+   private todoText: String
 
 
   constructor() { 
@@ -16,5 +16,10 @@ export class TodoInputComponent implements OnInit {
 
   ngOnInit() {
   }
+
+private addTodo(): void{
+  console.log("TODO:", this.todoText);
+  this.todoText='';
+}
 
 }
