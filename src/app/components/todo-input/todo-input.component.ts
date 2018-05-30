@@ -10,7 +10,7 @@ export class TodoInputComponent implements OnInit {
 
 
   constructor() { 
-    this.todoText = "";
+    this.todoText = ' ';
 
   }
 
