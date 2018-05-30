@@ -16,8 +16,7 @@ export class TodoService {
       this.nextId = 3;
    }
  
-   public addTodo(text: string) : void{
-     console.log(this.todos);
+   public addTodo(text: string) : void {
      let todo = new Todo(this.nextId, text);
      this.todos.push(todo);
      this.nextId++;
