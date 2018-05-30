@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import { Todo } from '../../classes/todo';
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoItemComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  private todo: Todo
+
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+  }
+
+  private removeTodo(): void {
+    this.todoService.removeTodo(this.todo.id);
   }
 
 }
