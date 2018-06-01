@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../../services/todo.service'
+import { TodoService } from '../../services/todo.service';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-todo-input',
@@ -7,11 +8,11 @@ import { TodoService } from '../../services/todo.service'
   styleUrls: ['./todo-input.component.css']
 })
 export class TodoInputComponent implements OnInit {
-  
+
    private todoText: string;
 
 
-  constructor( private todoService: TodoService) { 
+  constructor( private todoService: TodoService,private toastr: ToastrService) { 
     this.todoText = ' ';
 
   }
@@ -21,6 +22,7 @@ export class TodoInputComponent implements OnInit {
 
 private addTodo(): void{
   this.todoService.addTodo(this.todoText);
+  this.toastr.success('Added another TodoItem!!')
   this.todoText='';
 }
 
