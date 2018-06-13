@@ -22,7 +22,7 @@ export class TodoInputComponent implements OnInit {
 
 private addTodo(): void{
   this.todoService.addTodo(this.todoText);
-  this.toastr.success('Added another TodoItem!!')
+  this.toastr.success('Added another Todo-Item!!')
   this.todoText='';
 }
 
