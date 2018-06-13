@@ -12,6 +12,7 @@ import { TodoInputComponent } from './components/todo-input/todo-input.component
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoService } from './services/todo.service';
 import { ToastrModule } from 'ngx-toastr';
+import { environment } from '../environments/environment'
 
 
 @NgModule({
@@ -26,8 +27,9 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AngularFireModule,
+    AngularFireModule.initializeApp(environment.FirebaseConfig),
     AngularFireDatabaseModule,
+
   ],
   providers: [
     TodoService
